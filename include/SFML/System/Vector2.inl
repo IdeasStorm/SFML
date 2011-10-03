@@ -159,3 +159,10 @@ inline bool operator !=(const Vector2<T>& left, const Vector2<T>& right)
 {
     return (left.x != right.x) || (left.y != right.y);
 }
+
+////////////////////////////////////////////////////////////
+template <typename T>
+inline Vector2<T>& Vector2<T>::Zero()
+{
+    return Vector2<T>(0,0);
+}
