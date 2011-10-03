@@ -69,14 +69,14 @@ public :
     template <typename U>
     explicit Vector2(const Vector2<U>& vector);
 
-
-    static Vector2<T>& Zero();
-
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
     T x; ///< X coordinate of the vector
     T y; ///< Y coordinate of the vector
+
+    //Static Const Member For Zero Vector2
+    static const Vector2<T>zero;
 };
 
 ////////////////////////////////////////////////////////////

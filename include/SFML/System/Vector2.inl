@@ -52,6 +52,10 @@ y(static_cast<T>(vector.y))
 {
 }
 
+////////////////////////////////////////////////////////////
+template <typename T>
+const Vector2<T> Vector2<T>::zero = Vector2<T>(0,0);
+
 
 ////////////////////////////////////////////////////////////
 template <typename T>
@@ -158,11 +162,4 @@ template <typename T>
 inline bool operator !=(const Vector2<T>& left, const Vector2<T>& right)
 {
     return (left.x != right.x) || (left.y != right.y);
-}
-
-////////////////////////////////////////////////////////////
-template <typename T>
-inline Vector2<T>& Vector2<T>::Zero()
-{
-    return Vector2<T>(0,0);
 }
