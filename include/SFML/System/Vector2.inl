@@ -52,6 +52,24 @@ y(static_cast<T>(vector.y))
 {
 }
 
+
+////////////////////////////////////////////////////////////
+template <typename T>
+inline void Vector2<T>::Set(T x,T y)
+{
+    this->x = x;
+    this->y = y;
+}
+
+
+////////////////////////////////////////////////////////////
+template <typename T>
+inline Vector2<T> Vector2<T>::GetNormalized()
+{
+    return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
+}
+
+
 ////////////////////////////////////////////////////////////
 template <typename T>
 const Vector2<T> Vector2<T>::zero = Vector2<T>(0,0);
