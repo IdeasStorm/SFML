@@ -66,7 +66,10 @@ inline void Vector2<T>::Set(T x,T y)
 template <typename T>
 inline Vector2<T> Vector2<T>::GetNormalized()
 {
-    return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
+    if ((this->x != 0)&&(this->y != 0))
+        return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
+    else
+        return *this;   //i don't know if that is the best
 }
 
 
