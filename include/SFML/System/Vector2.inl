@@ -55,6 +55,11 @@ y(static_cast<T>(vector.y))
 
 ////////////////////////////////////////////////////////////
 template <typename T>
+const Vector2<T> Vector2<T>::zero = Vector2<T>(0,0);
+
+
+////////////////////////////////////////////////////////////
+template <typename T>
 inline void Vector2<T>::Set(T x,T y)
 {
     this->x = x;
@@ -66,16 +71,12 @@ inline void Vector2<T>::Set(T x,T y)
 template <typename T>
 inline Vector2<T> Vector2<T>::GetNormalized()
 {
-    if (*this != Vector2<T>::Zero)
+    if (*this != Vector2<T>::zero)
         return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
     else
         return *this;   //i don't know if that is the best
 }
 
-
-////////////////////////////////////////////////////////////
-template <typename T>
-const Vector2<T> Vector2<T>::zero = Vector2<T>(0,0);
 
 
 ////////////////////////////////////////////////////////////
