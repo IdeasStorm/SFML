@@ -69,7 +69,7 @@ inline void Vector2<T>::Set(T x,T y)
 
 ////////////////////////////////////////////////////////////
 template <typename T>
-inline Vector2<T> Vector2<T>::GetNormalized()
+inline Vector2<T> Vector2<T>::GetNormalized() const
 {
     if (*this != Vector2<T>::zero)
         return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
