@@ -66,13 +66,19 @@ inline void Vector2<T>::Set(T x,T y)
     this->y = y;
 }
 
+////////////////////////////////////////////////////////////
+template <typename T>
+inline T Vector2<T>::GetLength() const
+{
+    return static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
+}
 
 ////////////////////////////////////////////////////////////
 template <typename T>
 inline Vector2<T> Vector2<T>::GetNormalized() const
 {
     if (*this != Vector2<T>::zero)
-        return *this / static_cast<T>(std::sqrt(this->x * this->x + this->y * this->y));
+        return *this / GetLength();
     else
         return *this;   //i don't know if that is the best
 }
